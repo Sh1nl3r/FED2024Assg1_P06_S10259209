@@ -1,11 +1,9 @@
-/* Reset some default styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Basic layout styling */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -15,10 +13,9 @@ body {
     min-height: 100vh;
 }
 
-/* Header styling */
 .header {
     width: 100%;
-    background-color: #a0a0a0; /* Grey color for the header */
+    background-color: #a0a0a0; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,13 +31,11 @@ body {
     background-color: #ccc;
     padding: 5px 15px;
     border-radius: 5px;
-    width: 50%; /* Increase width of the navigation bar */
+    width: 50%; 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-
-/* Testimonial Section Styling */
 
 .testimonial-section {
     flex: 1;
@@ -53,7 +48,6 @@ body {
     gap: 20px;
 }
 
-/* Individual Photo and Testimony Container */
 .photo-text-container {
     display: flex;
     align-items: center;
@@ -61,13 +55,12 @@ body {
     width: 100%;
 }
 
-/* Photo styling */
 .photo {
     width: 50%;
     max-width: 150px;
     height: 150px;
     background-color: #d3d3d3;
-    border-radius: 50%; /* Make it a circle */
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,7 +68,6 @@ body {
     color: #333;
 }
 
-/* Testimony text styling as a circle */
 .text-circle {
     width: 80%;
     height: 150px;
@@ -90,17 +82,16 @@ body {
 
 .footer {
     width: 100%;
-    height: 10vh; /* Set the height of the footer to 10% of the viewport height */
+    height: 10vh; 
     background-color: lightgray;
     color: white;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-size: 18px;
-    position: relative; /* Ensure it stays at the bottom */
+    position: relative;
 }
 
-/* Link styling inside the footer */
 .footer .link {
     margin: 0 10px;
 }

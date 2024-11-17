@@ -1,11 +1,9 @@
-/* Reset some default styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Basic layout styling */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -14,18 +12,16 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Content wrapper to push footer to the bottom if needed */
 .content-wrapper {
-    flex: 1; /* Allow main content to take up remaining space */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Header styling */
 .header {
     width: 100%;
-    background-color: #a0a0a0; /* Grey color for the header */
+    background-color: #a0a0a0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,13 +37,12 @@ body {
     background-color: #ccc;
     padding: 5px 15px;
     border-radius: 5px;
-    width: 50%; /* Increase width of the navigation bar */
+    width: 50%; 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-/* Main content styling */
 .main-content {
     display: flex;
     padding: 20px;
@@ -59,7 +54,7 @@ body {
 }
 
 .photo {
-    flex: 0 0 30%; /* Set photo section to 30% of the width */
+    flex: 0 0 30%; 
     background-color: #d3d3d3;
     height: 200px;
     display: flex;
@@ -70,7 +65,7 @@ body {
 }
 
 .store-info {
-    flex: 0 0 70%; /* Set store info section to 70% of the width */
+    flex: 0 0 70%; 
     background-color: #d3d3d3;
     height: 200px;
     display: flex;
@@ -80,10 +75,9 @@ body {
     color: #333;
 }
 
-/* Footer styling */
 .footer {
     width: 100%;
-    height: 10vh; /* Set the height of the footer to 10% of the viewport height */
+    height: 10vh; 
     background-color: lightgray;
     color: white;
     display: flex;
@@ -92,12 +86,10 @@ body {
     font-size: 18px;
 }
 
-/* Link styling inside the footer */
 .footer .link {
     margin: 0 10px;
 }
 
-/* Desktop-specific styles */
 @media (min-width: 1024px) {
     .header {
         padding: 30px;
