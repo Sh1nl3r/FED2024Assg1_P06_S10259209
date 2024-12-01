@@ -577,29 +577,3 @@ input:invalid {
     margin: 0 15px;
     text-decoration: none;
 }
-
-/* @media (min-width: 1024px) {
-    .header {
-        padding: 30px;
-    }
-    
-    .shop-name {
-        font-size: 28px;
-    }
-
-    .navbar {
-        padding: 10px 20px;
-        width: 50%;
-    }
-
-    .photo {
-        width: 150px;
-        height: 150px;
-
-    }
-
-    .store-info {
-        height: 400px;
-        font-size: 24px;
-    }
-} */
