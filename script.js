@@ -1,16 +1,28 @@
-const carousel = document.querySelector(".carousel");
-const images = document.querySelectorAll(".carousel-item");
-let currentIndex = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".carousel");
+    const items = document.querySelectorAll(".carousel-item");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
+    const totalItems = items.length;
 
-function showNextImage() {
-    // Move to the next image
-    currentIndex = (currentIndex + 1) % images.length;
-    const offset = -currentIndex * images[0].clientWidth;
-    carousel.style.transform = `translateX(${offset}px)`;
-}
+    let currentIndex = 0;
 
-// Set interval for automatic sliding (3 seconds)
-setInterval(showNextImage, 3000);
+    function updateCarousel() {
+        const offset = -currentIndex * 100; // Calculate offset for the current slide
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % totalItems; // Move to the next slide
+        updateCarousel();
+    });
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Move to the previous slide
+        updateCarousel();
+    });
+});
+
 
 document.querySelector(".form").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
