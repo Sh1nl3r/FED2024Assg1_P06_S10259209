@@ -1,54 +1,43 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const carousel = document.querySelector(".carousel");
-    const items = document.querySelectorAll(".carousel-item");
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
-    const totalItems = items.length;
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+let currentIndex = 0;
 
-    let currentIndex = 0;
+function moveToSlide(index) {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+    currentIndex = index;
+}
 
-    function updateCarousel() {
-        const offset = -currentIndex * 100; // Calculate offset for the current slide
-        carousel.style.transform = `translateX(${offset}%)`;
-    }
-
-    nextButton.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % totalItems; // Move to the next slide
-        updateCarousel();
-    });
-
-    prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Move to the previous slide
-        updateCarousel();
-    });
-});
-
+// changes carousel every 3 seconds
+setInterval(() => {
+    const nextIndex = (currentIndex + 1) % slides.length;
+    moveToSlide(nextIndex);
+}, 3000);
 
 document.querySelector(".form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); //  prevents from submission
 
-    // Get all input fields except "Queries"
+    // gets all input fields except "Queries" div
     const requiredFields = document.querySelectorAll(
         "#first-name, #last-name, #email, #phone-number, #repair"
     );
 
-    let isValid = true; // Flag to track if the form is valid
+    let isValid = true; // track validity of form
 
     requiredFields.forEach((field) => {
         if (field.value.trim() === "") {
-            // Add a red border if the field is empty
+            // adds red border if isvalid is false
             field.style.border = "2px solid red";
             isValid = false;
         } else {
-            // Reset the border color if the field is valid
+            // resets border color if isvalid is true
             field.style.border = "1px solid #ccc";
         }
     });
 
     if (isValid) {
-        alert("Form submitted successfully!"); // Optional success message
-        // You can submit the form here (e.g., using AJAX or just form.submit())
+        alert("Form submitted successfully!"); // form submission message
     } else {
-        alert("Please fill in all required fields."); // Optional error message
+        alert("Please fill in all required fields."); // error message
     }
 });
